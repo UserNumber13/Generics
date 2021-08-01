@@ -1,32 +1,27 @@
 package com.company;
 
 public class BaseWallet<T extends Number> {
-    private T ammount;
+    private T ammount; // количество средств на счете
 
-    public BaseWallet(Number ammount) {
-        this.ammount = (T) ammount;
+
+    BaseWallet(T ammount) {
+        this.ammount = ammount;
     }
 
-    public Number getAmmount() {
+    public T getAmmount() {
         return ammount;
     }
-
-    public void setAmmount(Number ammount) {
-        this.ammount = (T) ammount;
-    }
 }
+class GoldWallet extends BaseWallet<Double> {
 
-class GoldWallet extends BaseWallet<Short> {
-
-    public GoldWallet(Short ammount) {
+    public GoldWallet(Double ammount) {
         super(ammount);
     }
 }
 
-class PlatinumWallet extends BaseWallet<Integer> {
+class PlatinumWallet extends BaseWallet<Double> {
 
-    public PlatinumWallet(Integer ammount) {
+    public PlatinumWallet(Double ammount) {
         super(ammount);
     }
 }
-
